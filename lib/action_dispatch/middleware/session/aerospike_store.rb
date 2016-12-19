@@ -4,7 +4,7 @@ require 'aerospike'
 
 module ActionDispatch
 	module Session
-		class AerospikeStore < AbstractStore
+		class AerospikeStore < Rack::Session::Abstract::ID
 
 	    AEROSPIKE_DEFAULT_OPTIONS = {
 	      :host => '127.0.0.1',
