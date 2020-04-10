@@ -14,9 +14,5 @@ Gem::Specification.new do |spec|
   spec.license       = "Apache2.0"
   spec.files         = Dir.glob("lib/**/*") + %w(LICENSE.txt README.md)
   spec.require_paths = ["lib"]
-  spec.add_development_dependency "bundler", "~> 1.7"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_runtime_dependency "aerospike", '~> 0.1', '>= 0.1.3'
-  spec.add_runtime_dependency "activesupport", "~> 4"
-  spec.add_runtime_dependency "actionpack", "~> 4"
+  spec.add_runtime_dependency "aerospike", '~> 2.11.0'
 end
