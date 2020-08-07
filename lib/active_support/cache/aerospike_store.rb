@@ -56,6 +56,8 @@ module ActiveSupport
       end
 
       def write_entry(key, entry, options)
+        return false if entry.value.nil? && !options[:cache_nils]
+
         options[:expiration] ||= options[:expires_in] if options[:expires_in]
         options[:record_exists_action] ||= options[:unless_exist]? Aerospike::RecordExistsAction::CREATE_ONLY : Aerospike::RecordExistsAction::REPLACE
         value = options[:raw]? entry.value : Marshal.dump(entry)
